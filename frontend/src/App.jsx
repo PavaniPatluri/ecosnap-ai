@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
-import { Camera, LayoutDashboard, Trophy, LogOut, Leaf } from 'lucide-react';
+import { Camera, LayoutDashboard, Trophy, LogOut, Leaf, Globe } from 'lucide-react';
 
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
 import Scanner from './pages/Scanner';
 import Leaderboard from './pages/Leaderboard';
 import AdminPanel from './pages/AdminPanel';
+import Awareness from './pages/Awareness';
 import api from './api';
 
 const Navigation = () => {
@@ -50,6 +51,9 @@ const Navigation = () => {
             <Link to="/leaderboard" className="text-gray-600 hover:text-eco-600 px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors">
               <Trophy className="h-5 w-5 mr-1.5" /> <span className="hidden sm:inline">Leaderboard</span>
             </Link>
+            <Link to="/awareness" className="text-gray-600 hover:text-eco-600 px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors">
+              <Globe className="h-5 w-5 mr-1.5" /> <span className="hidden sm:inline">Awareness</span>
+            </Link>
             {isAdmin && (
               <Link to="/admin" className="text-purple-600 hover:text-purple-700 px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors">
                 <span className="hidden sm:inline">Admin</span>
@@ -81,6 +85,7 @@ function App() {
             <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
             <Route path="/scanner" element={<PrivateRoute><Scanner /></PrivateRoute>} />
             <Route path="/leaderboard" element={<PrivateRoute><Leaderboard /></PrivateRoute>} />
+            <Route path="/awareness" element={<PrivateRoute><Awareness /></PrivateRoute>} />
             <Route path="/admin" element={<PrivateRoute><AdminPanel /></PrivateRoute>} />
           </Routes>
         </main>
