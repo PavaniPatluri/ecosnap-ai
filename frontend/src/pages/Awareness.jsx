@@ -34,23 +34,23 @@ const facts = [
 export default function Awareness() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-gray-100 text-center relative overflow-hidden">
+      <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 sm:p-12 shadow-sm border border-gray-100 dark:border-gray-700 text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-eco-400 to-teal-400"></div>
-        <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 tracking-tight">Environmental <span className="text-transparent bg-clip-text bg-gradient-to-r from-eco-600 to-teal-600">Awareness</span></h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">Environmental <span className="text-transparent bg-clip-text bg-gradient-to-r from-eco-600 to-teal-600">Awareness</span></h1>
+        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Every small action counts. Discover why we need to protect our planet and get inspired to make a difference today.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {quotes.map((q, idx) => (
-          <div key={idx} className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow relative">
+          <div key={idx} className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow relative">
             <Quote className="absolute top-6 right-6 h-12 w-12 text-gray-50 opacity-50 transform rotate-180" />
-            <div className="flex items-center justify-center h-12 w-12 rounded-2xl bg-gray-50 mb-6">
+            <div className="flex items-center justify-center h-12 w-12 rounded-2xl bg-gray-50 dark:bg-gray-900 mb-6">
               {q.icon}
             </div>
-            <p className="text-xl font-medium text-gray-800 mb-4 italic">"{q.text}"</p>
-            <p className="text-sm font-bold text-gray-500 uppercase tracking-wider">— {q.author}</p>
+            <p className="text-xl font-medium text-gray-800 dark:text-gray-200 mb-4 italic">"{q.text}"</p>
+            <p className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">— {q.author}</p>
           </div>
         ))}
       </div>
@@ -62,11 +62,11 @@ export default function Awareness() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {facts.map((fact, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-eco-50 flex items-start space-x-3">
+            <div key={idx} className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-eco-50 flex items-start space-x-3">
               <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-eco-100 text-eco-600 font-bold">
                 {idx + 1}
               </span>
-              <p className="text-gray-700 leading-relaxed">{fact}</p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{fact}</p>
             </div>
           ))}
         </div>

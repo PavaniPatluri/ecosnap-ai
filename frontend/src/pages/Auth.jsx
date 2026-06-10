@@ -33,17 +33,17 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-eco-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-3xl shadow-xl">
+      <div className="max-w-md w-full space-y-8 bg-white dark:bg-gray-800 p-10 rounded-3xl shadow-xl">
         <div className="text-center">
           <div className="flex justify-center">
             <div className="bg-eco-100 p-3 rounded-2xl">
               <Leaf className="h-12 w-12 text-eco-600" />
             </div>
           </div>
-          <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
+          <h2 className="mt-6 text-3xl font-extrabold text-gray-900 dark:text-white">
             {isLogin ? 'Sign in to EcoSnap' : 'Join the Movement'}
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Track your impact. Make a difference.
           </p>
         </div>
@@ -54,7 +54,7 @@ const Auth = () => {
               <input
                 type="text"
                 required
-                className="appearance-none rounded-xl relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-eco-500 focus:border-eco-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-xl relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 dark:text-white focus:outline-none focus:ring-eco-500 focus:border-eco-500 focus:z-10 sm:text-sm"
                 placeholder="Username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -65,7 +65,7 @@ const Auth = () => {
                 <input
                   type="email"
                   required
-                  className="appearance-none rounded-xl relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-eco-500 focus:border-eco-500 focus:z-10 sm:text-sm"
+                  className="appearance-none rounded-xl relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 dark:text-white focus:outline-none focus:ring-eco-500 focus:border-eco-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -76,7 +76,7 @@ const Auth = () => {
               <input
                 type="password"
                 required
-                className="appearance-none rounded-xl relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-eco-500 focus:border-eco-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-xl relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 dark:text-white focus:outline-none focus:ring-eco-500 focus:border-eco-500 focus:z-10 sm:text-sm"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

@@ -50,25 +50,25 @@ const Scanner = () => {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div className="text-center space-y-2">
-        <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Eco Scanner</h1>
-        <p className="text-lg text-gray-600">Snap a photo to reveal its hidden environmental impact.</p>
+        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">Eco Scanner</h1>
+        <p className="text-lg text-gray-600 dark:text-gray-400">Snap a photo to reveal its hidden environmental impact.</p>
       </div>
 
       {!result ? (
-        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8">
-          <div className="flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-2xl p-12 bg-gray-50 transition-colors hover:bg-gray-100 relative overflow-hidden group">
+        <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 p-8">
+          <div className="flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-2xl p-12 bg-gray-50 dark:bg-gray-900 transition-colors hover:bg-gray-100 dark:bg-gray-700 relative overflow-hidden group">
             {preview ? (
               <div className="relative w-full max-w-sm rounded-xl overflow-hidden shadow-lg">
                 <img src={preview} alt="Preview" className="w-full h-64 object-cover" />
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                   <button onClick={() => fileInputRef.current.click()} className="bg-white text-gray-900 px-4 py-2 rounded-lg font-medium shadow">Change Image</button>
+                   <button onClick={() => fileInputRef.current.click()} className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2 rounded-lg font-medium shadow">Change Image</button>
                 </div>
               </div>
             ) : (
               <div className="text-center">
                 <Camera className="mx-auto h-16 w-16 text-gray-400 mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900">Upload an Image</h3>
-                <p className="text-gray-500 mt-1">PNG, JPG up to 10MB</p>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Upload an Image</h3>
+                <p className="text-gray-500 dark:text-gray-400 mt-1">PNG, JPG up to 10MB</p>
                 <button 
                   onClick={() => fileInputRef.current.click()}
                   className="mt-6 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-eco-600 hover:bg-eco-700"
@@ -114,21 +114,21 @@ const Scanner = () => {
         </div>
       ) : (
         <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden">
             <div className="bg-eco-50 px-8 py-6 flex justify-between items-center border-b border-eco-100">
               <div>
                 <p className="text-eco-600 font-semibold tracking-wide uppercase text-sm">Detected Object</p>
-                <h2 className="text-3xl font-bold text-gray-900">{result.object_name}</h2>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{result.object_name}</h2>
               </div>
               <div className="text-right">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-md border-4 border-eco-200">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white dark:bg-gray-800 shadow-md border-4 border-eco-200">
                   <span className="text-2xl font-black text-eco-600">{result.eco_score}</span>
                 </div>
-                <p className="text-xs font-bold text-gray-500 uppercase mt-2">EcoScore</p>
+                <p className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase mt-2">EcoScore</p>
               </div>
             </div>
             <div className="p-8">
-              <p className="text-gray-700 text-lg leading-relaxed">{result.explanation}</p>
+              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">{result.explanation}</p>
             </div>
           </div>
 
@@ -156,8 +156,8 @@ const Scanner = () => {
             />
           </div>
 
-          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 space-y-6">
-            <h3 className="text-2xl font-bold text-gray-900">Better Choices</h3>
+          <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 p-8 space-y-6">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Better Choices</h3>
             <div className="bg-eco-50 rounded-2xl p-6 border border-eco-100">
               <h4 className="text-lg font-semibold text-eco-800 mb-2">Sustainable Alternatives</h4>
               <p className="text-eco-900 leading-relaxed">{result.sustainable_alternatives}</p>
@@ -171,7 +171,7 @@ const Scanner = () => {
           <div className="flex justify-center pt-4">
             <button
               onClick={reset}
-              className="inline-flex items-center px-6 py-3 border-2 border-gray-200 text-base font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center px-6 py-3 border-2 border-gray-200 dark:border-gray-700 text-base font-medium rounded-full text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:bg-gray-900 transition-colors"
             >
               <RefreshCw className="w-5 h-5 mr-2" /> Scan Another Item
             </button>
